@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { ArrowRight, BarChart3, BarChart4, ChartPie, LineChart, ShieldCheck, TrendingUp } from 'lucide-react';
+import { ArrowRight, BarChart3, BarChart4, ChartPie, LineChart, ShieldCheck, TrendingUp, Bell } from 'lucide-react';
 
 const FeatureCard = ({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) => {
   return (

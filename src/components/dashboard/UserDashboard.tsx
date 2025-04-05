@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { mockStrategies, Strategy, assetTypes, riskLevels, strategyTypes } from '@/utils/mockData';
 import { useAuth } from '@/context/AuthContext';
 import { ArrowDownIcon, ArrowUpIcon, AlertTriangle, Bell, TrendingUp, CircleDollarSign, PieChart, BarChart4 } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar, Pie, PieChart as RechartsPieChart } from 'recharts';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
@@ -197,11 +196,11 @@ const UserDashboard: React.FC = () => {
               <CardContent>
                 <div className="h-[250px]">
                   <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
+                    <RechartsPieChart>
                       <Tooltip 
                         formatter={(value) => [`${value}%`, 'Allocation']}
                       />
-                      <pie
+                      <Pie
                         data={[
                           { name: 'Stocks', value: 45, fill: '#1A365D' },
                           { name: 'Bonds', value: 25, fill: '#38A169' },
@@ -217,7 +216,7 @@ const UserDashboard: React.FC = () => {
                         fill="#8884d8"
                         label
                       />
-                    </PieChart>
+                    </RechartsPieChart>
                   </ResponsiveContainer>
                 </div>
               </CardContent>
